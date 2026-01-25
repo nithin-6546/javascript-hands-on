@@ -11,17 +11,26 @@ Tasks:
     3. reduce() to calculate average temperature
     4. find() first temperature above 40
     5. findIndex() of temperature 28 */
-let temp = [32, 35, 28, 40, 38, 30, 42];
-let result = temp.filter((element)=> element>35);
-console.log(result);
-let result1 = temp.map((element)=> (element * 9/5) + 32);
-console.log(result1);
-let result2 = temp.reduce((acc, ele)=> acc + ele, 0) / temp.length;
-console.log(result2);       
-let result3 = temp.find((ele)=> ele>40);
-console.log(result3);   
-let result4 = temp.findIndex((ele)=> ele==28);
-console.log(result4);
+//given data
+    let temp = [32, 35, 28, 40, 38, 30, 42];
+//1. filtering temperatures above 35 and storing it into temperatureAbove35
+    let temperatureAbove35 = temp.filter((element)=> element>35);
+    console.log("Temperatures above 35 are:",temperatureAbove35);
+//2.using map() method converting all temperatures from Celsius → Fahrenheit and stroring it into fahrenheitarray
+    let Fahrenheit = temp.map((element)=> (element * 9/5) + 32);
+    console.log("temperature in terms of Fahrenheit:",Fahrenheit);
+//3.reduce() method to calculate average temperature 
+    let averageTemperature = temp.reduce((acc, ele)=> acc + ele, 0) / temp.length;
+    console.log("Average Temperature is:",averageTemperature);
+//4.find() first temperature above 40     
+    let result = temp.find((ele)=> ele>40);
+    console.log("first temperature below 40 is:",result);
+//5. findIndex() of temperature 28  
+    let indexOfTemperature = temp.findIndex((ele)=> ele==28);
+    console.log("index of temperature 28 is:",indexOfTemperature);
+
+
+// ==============================================================================================================
 
 
 /*Assignment 2: Online Course Name Processor
@@ -40,18 +49,29 @@ Tasks:
 
     4. find() the course "react"
     5. findIndex() of "node"*/
-const courses = ["javascript", "react", "node", "mongodb", "express"];
 
-let res = courses.filter((element)=>element.length>5);  
-console.log(res);
-let res1 = courses.map((element)=>element.toUpperCase());
-console.log(res1);
-let res2 = courses.reduce((acc, ele)=> acc + " | " + ele);
-console.log(res2);
-let res3 = courses.find((ele)=> ele=="react");
-console.log(res3);
-let res4 = courses.findIndex((ele)=> ele=="node");
-console.log(res4);
+//given data
+    const courses = ["javascript", "react", "node", "mongodb", "express"];
+//1.courses with name length > 5
+    let names = courses.filter((element)=>element.length>5);  
+    console.log("course names with length greater than 5:",names);
+//2.convert course names to uppercase
+    let upperCaseCourses = courses.map((element)=>element.toUpperCase());
+    console.log("courses converted to uppercase:",upperCaseCourses);
+//3.reduce() to generate a single string
+    let singleString = courses.reduce((acc, ele)=> acc + " | " + ele);
+    console.log("single string:",singleString);
+// 4. find() the course "react"
+    let react = courses.find((ele)=> ele=="react");
+    console.log("the course react is found:",react);
+//5.findIndex() of "node"
+    let index = courses.findIndex((ele)=> ele=="node");
+    console.log("Index of course named Node:",index);
+
+
+// ======================================================================================================
+
+
  
 /*Assignment 3: Student Marks List
 --------------------------------
@@ -66,16 +86,20 @@ Tasks:
     3. reduce() to find highest mark
     4. find() first mark below 40
     5. findIndex() of mark 92*/
-
-const marks = [78, 92, 35, 88, 40, 67];
-
-let resm = marks.filter((element)=> element>=40);   
-console.log(resm);
-let resm1 = marks.map((element)=> element + 5);
-console.log(resm1);
-let resm2 = marks.reduce((max, ele)=> (ele > max ? ele : max), marks[0]);
-console.log(resm2);
-let resm3 = marks.find((ele)=> ele<40);
-console.log(resm3);
-let resm4 = marks.findIndex((ele)=> ele==92);
-console.log(resm4);
+//given data
+    const marks = [78, 92, 35, 88, 40, 67];
+//1.marks using filter methodks above 40
+    let passMarks = marks.filter((element)=> element>=40);   
+    console.log("pass marks :",passMarks);
+//2.map() to add 5 grace marks to each student
+    let UpdatedMarks = marks.map((element)=> element + 5);
+    console.log("5 marks added to each student:",UpdatedMarks);
+//3. reduce() to find highest mark
+    let highestMarks = marks.reduce((max, ele)=> (ele > max ? ele : max), marks[0]);
+    console.log("highest marks:",highestMarks);
+//4.find() first mark below 40
+    let markBelow40 = marks.find((ele)=> ele<40);
+    console.log("marks below 40:",markBelow40);
+//5. findIndex() of mark 92
+    let findIndex = marks.findIndex((ele)=> ele==92);
+    console.log("Index of marks 92 is:",findIndex);
