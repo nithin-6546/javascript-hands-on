@@ -17,20 +17,28 @@ Tasks:
     3. Update role from "student" to "admin"
     4. Delete the isActive property
     5. Use Object.keys() to list all remaining fields*/
-const user = {
-    id: 101,
-    name: "Ravi",
-    email: "ravi@gmail.com",
-    role: "student",
-    isActive: true
-};  
-console.log("Name:", user.name);
-console.log("Email:", user.email);
-user.lastLogin = "2026-01-01";
-user.role = "admin";
-delete user.isActive;
-let userKeys = Object.keys(user);
-console.log("Remaining fields:", userKeys); 
+    //given data:
+    const user = {
+        id: 101,
+        name: "Ravi",
+        email: "ravi@gmail.com",
+        role: "student",
+        isActive: true
+    };  
+    //1. Read and print the user’s name and email
+    console.log("Name:", user.name);
+    console.log("Email:", user.email);
+    //2. Add a new property lastLogin: "2026-01-01"
+    user.lastLogin = "2026-01-01";
+    console.log("New property lastLogin is added successfully...");
+    //3. Update role from "student" to "admin"
+    user.role = "admin";
+    console.log("Updated the role from student to admin");
+    //4. Delete the isActive property
+    delete user.isActive;
+    console.log("Deleted isActive property");
+    let userKeys = Object.keys(user);
+    console.log("Remaining fields:", userKeys); 
 
 
 /*Assignment 2: Exam Result Summary
@@ -50,28 +58,29 @@ Tasks:
     2. Calculate average marks
     3. Find the highest scoring subject
     4. Add a new subject computer: 90*/
-const marks = {
-    maths: 78,
-    physics: 65,
-    chemistry: 82,
-    english: 55
-};
-let totalMarks = 0;
-let highestMark = 0;
-let highestSubject = "";
-for (let subject in marks) {
-    totalMarks += marks[subject];
-    if (marks[subject] > highestMark) {
-        highestMark = marks[subject];
-        highestSubject = subject;
+    //given data
+    const marks = {
+        maths: 78,
+        physics: 65,
+        chemistry: 82,
+        english: 55
+    };
+    let totalMarks = 0;
+    let highestMark = 0;
+    let highestSubject = "";
+    for (let subject in marks) {
+        totalMarks += marks[subject];
+        if (marks[subject] > highestMark) {
+            highestMark = marks[subject];
+            highestSubject = subject;
+        }
     }
-}
-let averageMarks = totalMarks / Object.keys(marks).length;
-marks.computer = 90;
-console.log("Total Marks:", totalMarks);
-console.log("Average Marks:", averageMarks);
-console.log("Highest Scoring Subject:", highestSubject, "with", highestMark, "marks");
-console.log("Updated Marks:", marks);
+    let averageMarks = totalMarks / Object.keys(marks).length;
+    marks.computer = 90;
+    console.log("Total Marks:", totalMarks);
+    console.log("Average Marks:", averageMarks);
+    console.log("Highest Scoring Subject:", highestSubject, "with", highestMark, "marks");
+    console.log("Updated Marks:", marks);
 
 /*Assignment 3: Application Settings Controller
 ---------------------------------------------
@@ -91,14 +100,14 @@ Tasks :
     2. Turn autoSave to true
     3. Remove the notifications setting
     4. Freeze the settings object so it cannot be modified*/
-const settings = {
-    theme: "light",
-    notifications: true,
-    autoSave: false,
-    language: "en"
-};
-settings.theme = settings.theme === "light" ? "dark" : "light";
-settings.autoSave = true;
-delete settings.notifications;
-Object.freeze(settings);
-console.log("Updated Settings:", settings);
+    const settings = {
+        theme: "light",
+        notifications: true,
+        autoSave: false,
+        language: "en"
+    };
+    settings.theme = settings.theme === "light" ? "dark" : "light";
+    settings.autoSave = true;
+    delete settings.notifications;
+    Object.freeze(settings);
+    console.log("Updated Settings:", settings);
