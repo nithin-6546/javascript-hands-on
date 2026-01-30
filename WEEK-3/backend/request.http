@@ -1,0 +1,70 @@
+// user API's
+GET http://127.0.0.1:3000/user-api/users
+
+###
+POST http://127.0.0.1:3000/user-api/users
+Content-Type: application/json
+
+{
+    "id":104,
+    "name":"nithin",
+    "age":20
+}
+
+
+###
+PUT http://127.0.0.1:3000/user-api/user/id
+Content-Type: application/json
+
+{
+    "id":104,
+    "name":"Mahesh",
+    "age":45
+}
+
+###
+//read a user by id
+GET http://localhost:3000/users/104
+
+###
+DELETE http://127.0.0.1:3000/user/104
+
+
+# ====================================================================
+
+
+
+//product API's
+
+###
+GET http://localhost:3000/product-api/products
+
+###
+//get product with id
+GET http://localhost:3000/product-api/products-id/102
+
+###
+GET http://localhost:3000/product-api/products-brand/samsung
+###
+POST http://localhost:3000/product-api/products
+Content-Type: application/json
+
+{
+    "productId":105,
+    "name":"TV",
+    "price":20000,
+    "Brand":"Samsung"
+}
+###
+PUT http://localhost:3000/product-api/products
+Content-Type: application/json
+
+{
+    "productId":101,
+    "name":"Laptop",
+    "price":35000,
+    "Brand":"HP"
+}
+
+###
+DELETE http://localhost:3000/product-api/products/102
