@@ -1,17 +1,32 @@
-import exp, { json } from 'express';//importing express modules
+import exp from 'express';
+import { connect } from 'mongoose';
+import { userApp } from './API/userAPI.js';
+import { productApp } from './API/productAPI.js';
+const app=exp()
 
-import { userApp } from './APIs/user-api.js'
-import { productApp } from './APIs/product-api.js';
-//create HTTP server
-//create server
-const app=exp();
-//assign port  number
-app.listen(3000,()=>console.log('HTTP server listenening on port 3000'));
-
-//body parsing middleware
+//connect to db server
+async function connection(){
+    try{
+    await connect('mongodb://localhost:27017/productsdb')
+    console.log("Connected to database");
+    //after the successful db connection then assign a port to webserver 
+    app.listen(3000,()=> console.log("server listening on port 3000..."));
+    }catch(err){
+        console.log("error in connecting database",err)
+    }
+    
+}
+connection()
+//assign a port
 app.use(exp.json())
-app.use('/user-api',userApp)
+app.use('/userAPI',userApp);
+app.use('/productAPI',productApp)
 
-app.use('/product-api',productApp);
 
-
+//error handling middleware
+app.use((err,req,res ,next)=>{
+    res.status(400).json({
+        message:"Error has occured",
+        reason:err.message
+    })
+})

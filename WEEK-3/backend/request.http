@@ -1,70 +1,69 @@
-// user API's
-GET http://127.0.0.1:3000/user-api/users
+//UserAPI requests
+//read all users
+GET http://localhost:3000/userAPI/users
+
 
 ###
-POST http://127.0.0.1:3000/user-api/users
+GET http://localhost:3000/userAPI/users/697f1d179eaf421da5c7a256
+
+//create user
+###
+POST http://localhost:3000/userAPI/users
 Content-Type: application/json
 
 {
-    "id":104,
-    "name":"nithin",
+    "username":"Hema",
+    "password":"sau@123456",
+    "age":23
+}
+
+###
+PUT http://localhost:3000/userAPI/users/697f1f298259c69e10c54103
+Content-Type: application/json
+
+{
+    "username":"nithin",
+    "password":"nithin6546",
     "age":20
 }
 
-
 ###
-PUT http://127.0.0.1:3000/user-api/user/id
+DELETE http://localhost:3000/userAPI/users/697f1f298259c69e10c54103
+
+
+
+# =========================================================================
+
+//prodcut API requests
+
+//get all the users
+###
+GET http://localhost:3000/productAPI/products
+
+//creates user
+###
+POST http://localhost:3000/productAPI/products
 Content-Type: application/json
 
 {
-    "id":104,
-    "name":"Mahesh",
-    "age":45
+    "pid":103,
+    "productName":"pro",
+    "price":5000000
 }
 
+//get user by objId
 ###
-//read a user by id
-GET http://localhost:3000/users/104
-
-###
-DELETE http://127.0.0.1:3000/user/104
-
-
-# ====================================================================
-
-
-
-//product API's
+GET http://localhost:3000/productAPI/products/697dcfeb0267a73f04c52884
 
 ###
-GET http://localhost:3000/product-api/products
-
-###
-//get product with id
-GET http://localhost:3000/product-api/products-id/102
-
-###
-GET http://localhost:3000/product-api/products-brand/samsung
-###
-POST http://localhost:3000/product-api/products
+PUT http://localhost:3000/productAPI/products/697dcfeb0267a73f04c52884
 Content-Type: application/json
 
 {
-    "productId":105,
-    "name":"TV",
-    "price":20000,
-    "Brand":"Samsung"
-}
-###
-PUT http://localhost:3000/product-api/products
-Content-Type: application/json
-
-{
-    "productId":101,
-    "name":"Laptop",
-    "price":35000,
-    "Brand":"HP"
+    "pid":108,
+    "productName":"Laptop",
+    "price":50000
 }
 
 ###
-DELETE http://localhost:3000/product-api/products/102
+DELETE http://localhost:3000/productAPI/products/697dcfeb0267a73f04c52884
