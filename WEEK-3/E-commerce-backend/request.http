@@ -1,0 +1,41 @@
+//create a product
+###
+POST http://localhost:3000/product-api/products
+Content-Type: application/json
+
+{
+    "productName":"Mobile",
+    "price":1500,
+    "brand":"Samsung"
+}
+
+//read all the products
+###
+get http://localhost:3000/product-api/products
+
+
+
+
+###
+POST http://localhost:3000/user-api/users
+Content-Type: application/json
+
+{
+    "name":"vikas",
+    "email":"vikas@gmail.com",
+    "password":"sonu",
+    "cart":[]
+}
+
+###
+GET http://localhost:3000/user-api/users
+
+
+//add products to the cart
+###
+PUT http://localhost:3000/user-api/user-cart/user-id/698199c32e8671d5c578e897/product-id/6981901c9ba64f02da7146dd
+
+
+###
+//read user by id
+get http://localhost:3000/user-api/users/698199c32e8671d5c578e897
